@@ -1,0 +1,13 @@
+{
+  "name": "portal",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/s-yk/portal.git",
+  "author": "s-yk <sonic_cave@hotmail.co.jp>",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^6.3.0",
+    "eslint-config-eslint": "^5.0.1",
+    "eslint-plugin-vue": "^5.2.3"
+  }
+}
