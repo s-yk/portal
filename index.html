@@ -14,9 +14,9 @@
 
 <body>
     <div id="buttons">
-        <template v-for="button in buttons">
-            <button v-bind:disabled="button.disabled" v-on:click="send" v-bind:url="button.url">{{ button.name }}</button>
-        </template>
+        <button v-bind:disabled="!buttons.gitbucket.isActive" v-bind:url="buttons.gitbucket.url" v-on:click="send">{{ buttons.gitbucket.name }}</button>
+        <button v-bind:disabled="!buttons.jenkins.isActive" v-bind:url="buttons.jenkins.url" v-on:click="send">{{ buttons.jenkins.name }}</button>
+        <button v-bind:disabled="!buttons.sonarqube.isActive" v-bind:url="buttons.sonarqube.url" v-on:click="send">{{ buttons.sonarqube.name }}</button>
     </div>
 </body>
 <script src="index.js"></script>
