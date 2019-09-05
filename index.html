@@ -15,7 +15,15 @@
 <body>
     <div id="buttons">
         <template v-for="button in buttons">
-            <button v-bind:disabled="!button.isActive" v-bind:url="button.url" v-on:click="send">{{ button.name }}</button>
+            <div>
+                <button 
+                    v-bind:disabled="!button.isActive"
+                    v-bind:url="button.url"
+                    v-on:click="send">
+                    {{ button.name }}
+                </button>
+                <span>{{ button.status }}</span>
+            </div>
         </template>
     </div>
 </body>

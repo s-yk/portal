@@ -7,8 +7,10 @@ const check = function(button) {
     }
   }).then(response => {
     button.isActive = true;
+    button.status = response.status
   }).catch(error => {
     button.isActive = false;
+    button.status = error.message
   });
 };
 
@@ -16,9 +18,9 @@ var vm = new Vue({
     el: '#buttons',
     data: {
       buttons: [
-        { name: 'gitbucket', url: 'http://localhost:8080/gitbucket/', isActive: false},
-        { name: 'jenkins', url: 'http://localhost:8080/jenkins/', isActive: false},
-        { name: 'sonarqube', url: 'http://localhost:8080/sonarqube/', isActive: false},
+        { name: 'gitbucket', url: 'http://localhost:8080/gitbucket/', isActive: false, status: 200},
+        { name: 'jenkins', url: 'http://localhost:8080/jenkins/', isActive: false, status: 200},
+        { name: 'sonarqube', url: 'http://localhost:8080/sonarqube/', isActive: false, status: 200},
       ]
     },
     methods: {
