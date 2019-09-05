@@ -13,19 +13,39 @@
 </head>
 
 <body>
-    <div id="buttons">
-        <template v-for="button in buttons">
-            <div>
-                <button 
-                    v-bind:disabled="!button.isActive"
-                    v-bind:url="button.url"
-                    v-on:click="send">
-                    {{ button.name }}
-                </button>
-                <span>{{ button.status }}</span>
+    <section class="hero is-info">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title">
+                    Sites
+                </h1>
             </div>
-        </template>
-    </div>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <div class="tile is-ancestor" id="buttons">
+                <div class="tile is-parent is-0 is-vertical">
+                    <template v-for="item in buttons">
+                        <div class="tile is-child notification"
+                            v-bind:class="{'is-warning': !item.isActive, 'is-info': item.isActive }">
+                            <div>
+                                <a class="button is-fullwidth is-success" v-bind:class="{ 'is-static': !item.isActive }"
+                                    v-bind:href="item.url" target="_blank">
+                                    {{ item.name }}
+                                </a></div>
+                            <div>
+                                <span v-if="item.isLoading" class="icon">
+                                    <i class="fas fa-spinner fa-pulse"></i>
+                                </span>
+                                <span>{{ item.status }}</span>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+            </div>
+        </div>
+    </section>
 </body>
 <script src="index.js"></script>
 </html>
