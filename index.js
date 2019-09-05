@@ -15,11 +15,11 @@ const check = function(button) {
 var vm = new Vue({
     el: '#buttons',
     data: {
-      buttons: {
-        gitbucket: { name: 'gitbucket', url: 'http://localhost:8080/gitbucket/', isActive: false},
-        jenkins: { name: 'jenkins', url: 'http://localhost:8080/jenkins/', isActive: false},
-        sonarqube: { name: 'sonarqube', url: 'http://localhost:8080/sonarqube/', isActive: false},
-      }
+      buttons: [
+        { name: 'gitbucket', url: 'http://localhost:8080/gitbucket/', isActive: false},
+        { name: 'jenkins', url: 'http://localhost:8080/jenkins/', isActive: false},
+        { name: 'sonarqube', url: 'http://localhost:8080/sonarqube/', isActive: false},
+      ]
     },
     methods: {
       send: function(event) {
@@ -27,7 +27,7 @@ var vm = new Vue({
       },
     },
     mounted() {
-      for (const value of Object.values(this.buttons)) {
+      for (const value of this.buttons) {
         check(value);
       }
     }
