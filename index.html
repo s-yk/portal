@@ -8,6 +8,7 @@
     <title>Document</title>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+    <link rel="stylesheet" href="index.css">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
@@ -24,29 +25,31 @@
     </section>
     <section class="section">
         <div class="container">
-            <div class="tile is-ancestor" id="buttons">
+            <div class="columns is-multiline" id="buttons">
                 <template v-for="item in buttons">
-                    <div class="tile is-parent">
-                        <div class="tile is-child notification"
-                            v-bind:class="{'is-warning': !item.isActive, 'is-info': item.isActive }">
-                            <div>
-                                <a class="button is-fullwidth is-success" v-bind:class="{ 'is-static': !item.isActive }"
-                                    v-bind:href="item.url" target="_blank">
+                    <div class="column is-one-third">
+                        <div class="column-content"
+                            v-bind:class="{'has-background-warning': !item.isActive, 'has-background-info': item.isActive }">
+                            <div class="has-text-centered">
+                                <a class="site-button button is-success is-half"
+                                    v-bind:class="{ 'is-static': !item.isActive }" v-bind:href="item.url"
+                                    target="_blank">
                                     {{ item.name }}
                                 </a>
                             </div>
                             <div>
-                                <span v-if="item.isLoading" class="icon">
+                                <span v-show="!item.isLoading" class="icon">
                                     <i class="fas fa-spinner fa-pulse"></i>
                                 </span>
                                 <span>{{ item.status }}</span>
                             </div>
                         </div>
                     </div>
-                </template> </div>
+                </template>
+            </div>
         </div>
     </section>
 </body>
 <script src="index.js"></script>
 
-</html>
+</script>
