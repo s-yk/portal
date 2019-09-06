@@ -24,9 +24,10 @@ var vm = new Vue({
     el: '#buttons',
     data: {
       buttons: [
-        { name: 'gitbucket', url: 'http://localhost:8080/gitbucket/', isActive: false, status: 200, isLoading: true},
-        { name: 'jenkins', url: 'http://localhost:8080/jenkins/', isActive: false, status: 200, isLoading: true},
-        { name: 'sonarqube', url: 'http://localhost:8080/sonarqube/', isActive: false, status: 200, isLoading: true},
+        { name: 'gitbucket', url: '/gitbucket/', isActive: false, status: 'Loading', isLoading: true},
+        { name: 'jenkins', url: '/jenkins/', isActive: false, status: 'Loading', isLoading: true},
+        { name: 'sonarqube', url: '/sonarqube/', isActive: false, status: 'Loading', isLoading: true},
+        { name: 'api', url: '/api/', isActive: false, status: 'Loading', isLoading: true},
       ]
     },
     methods: {
