@@ -26,26 +26,23 @@
     <section class="section">
         <div class="container">
             <div class="columns is-multiline" id="buttons">
-                <template v-for="item in buttons">
-                    <div class="column is-one-third">
-                        <div class="column-content"
-                            v-bind:class="{'has-background-warning': !item.isActive, 'has-background-info': item.isActive }">
-                            <div class="has-text-centered">
-                                <a class="site-button button is-success is-half"
-                                    v-bind:class="{ 'is-static': !item.isActive }" v-bind:href="item.url"
-                                    target="_blank">
-                                    {{ item.name }}
-                                </a>
-                            </div>
-                            <div>
-                                <span v-show="!item.isLoading" class="icon">
-                                    <i class="fas fa-spinner fa-pulse"></i>
-                                </span>
-                                <span>{{ item.status }}</span>
-                            </div>
+                <div class="column is-one-third" v-for="item in buttons">
+                    <div class="column-content"
+                        v-bind:class="{'has-background-warning': !item.isActive, 'has-background-info': item.isActive }">
+                        <div class="has-text-centered">
+                            <a class="site-button button is-success is-half"
+                                v-bind:class="{ 'is-static': !item.isActive }" v-bind:href="item.url" target="_blank">
+                                {{ item.name }}
+                            </a>
+                        </div>
+                        <div>
+                            <span v-show="!item.isLoading" class="icon">
+                                <i class="fas fa-spinner fa-pulse"></i>
+                            </span>
+                            <span>{{ item.status }}</span>
                         </div>
                     </div>
-                </template>
+                </div>
             </div>
         </div>
     </section>
